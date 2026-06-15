@@ -6,8 +6,10 @@
 
   home.packages = with pkgs; [
     # ─── Navegadores Web ───
-    brave
     firefox
+    (brave.override {
+      commandLineArgs = "--ozone-platform=x11";
+    })
 
     # ─── Comunicación ───
     telegram-desktop
@@ -17,7 +19,10 @@
     bazaar
     github-desktop
     jetbrains-toolbox
-    vscode
+    vscode-fhs
+    nodejs
+    openjdk25
+    pandoc
 
     # ─── Gaming ───
     gamemode
@@ -46,7 +51,6 @@
     virt-manager
 
     # ─── Herramientas de Consola (CLI) ───
-    nodejs
     yazi
   ];
 
@@ -128,6 +132,38 @@
       music       = "${config.home.homeDirectory}/Música";
       pictures    = "${config.home.homeDirectory}/Imágenes";
       videos      = "${config.home.homeDirectory}/Videos";
+    };
+
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        # ── Navegador Web (Brave) ──
+        "text/html"                = [ "brave-browser.desktop" ];
+        "x-scheme-handler/http"    = [ "brave-browser.desktop" ];
+        "x-scheme-handler/https"   = [ "brave-browser.desktop" ];
+        "x-scheme-handler/about"   = [ "brave-browser.desktop" ];
+        "x-scheme-handler/unknown" = [ "brave-browser.desktop" ];
+
+        # ── Visor de PDF ──
+        # Nota: Si prefieres otro, cambia masterpdfeditor5 por okular.desktop o pdfarranger.desktop
+        "application/pdf"          = [ "onlyoffice-desktopeditors.desktop" ];
+
+        # ── Github Desktop ──
+        "x-scheme-handler/x-github-client"       = [ "github-desktop.desktop" ];
+        "x-scheme-handler/x-github-desktop-auth" = [ "github-desktop.desktop" ];
+        "x-scheme-handler/x-github-desktop-dev-auth" = [ "github-desktop.desktop" ];
+      };
+    };
+
+    desktopEntries = {
+      vscode-folder = {
+        name = "Abrir con VS Code";
+        exec = "code %F";
+        icon = "vscode";
+        terminal = false;
+        type = "Application";
+        mimeType = [ "inode/directory" ];
+      };
     };
   };
 
