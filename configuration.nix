@@ -9,7 +9,7 @@
   # BOOT
   # ─────────────────────────────────────────────
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "quiet"
       "splash"
@@ -23,7 +23,7 @@
 
     loader = {
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 10;
+      systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = true;
       timeout = 3;
     };
@@ -51,8 +51,8 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.settings = {
-    Theme = {
-      Background = "/home/zhi/Imágenes/Fondos de Pantalla/Wallhaven - 1013.png";
+    theme = {
+      background = "/home/zhi/Imágenes/Fondos de Pantalla/Wallhaven - 1013.png";
     };
   };
 
