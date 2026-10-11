@@ -3,29 +3,33 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    twintail-nix.url = "github:madebycli/twintail-nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, ... } @ inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, twintail-nix, ... } @ inputs: {
     nixosConfigurations.Suisei = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ({ config, ... }: {
           nixpkgs.overlays = [
-            (final: prev: {
-              stable = import nixpkgs-stable {
-                system = final.stdenv.hostPlatform.system;
-                config.allowUnfree = true;
-              };
-            })
+            inputs.antigravity-nix.overlays.default
           ];
         })
+
+        twintail-nix.nixosModules.default
+        {
+          programs.twintaillauncher.enable = true;
+        }
 
         ./hardware-configuration.nix
         ./configuration.nix

@@ -8,7 +8,7 @@
   home.homeDirectory = "/home/zhi";
 
   # =========================================
-  # XDG USER DIRECTORIES & DESKTOP ENTRIES
+  # XDG USER DIRECTORIES
   # =========================================
   xdg = {
     enable = true;
@@ -23,36 +23,66 @@
       videos = "${config.home.homeDirectory}/Videos";
     };
 
-    /*
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "text/html" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/http" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/https" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/about" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/unknown" = [ "brave-browser.desktop" ];
-        "application/pdf" = [ "onlyoffice-desktopeditors.desktop" ];
-        "x-scheme-handler/x-github-client" = [ "github-desktop.desktop" ];
-        "x-scheme-handler/x-github-desktop-auth" = [ "github-desktop.desktop" ];
-        "x-scheme-handler/x-github-desktop-dev-auth" = [ "github-desktop.desktop" ];
+    desktopEntries = {
+      "org.kde.kwrite" = {
+        name = "KWrite";
+        noDisplay = true;
+      };
+      printcraft = {
+        name = "PrintCraft";
+        genericName = "PDF Editor";
+        comment = "Read, organize, combine, split and secure PDFs";
+        exec = "printcraft %F";
+        icon = "ai.storyteller.printcraft";
+        terminal = false;
+        categories = [ "Office" "Viewer" "Graphics" ];
+        mimeType = [ "application/pdf" ];
       };
     };
+  };
 
-    desktopEntries = {
-      ConversorEpub = {
-        name = "Conversor EPUB";
-        exec = "${pkgs.appimage-run}/bin/appimage-run /home/zhi/Documentos/conversor-epub/dist/ConversorEpub";
-        icon = "/home/zhi/Documentos/conversor-epub/assets/ConversorEpub.png";
-        terminal = false;
-        type = "Application";
-        categories = ["Utility" "Office" ];
-      };
-    }; */
+  gtk = {
+    enable = true;
+    gtk2.enable = false; # Evita que Home Manager intente gestionar ~/.gtkrc-2.0 y choque con KDE Plasma
+    theme = {
+      name = "Breeze-Dark";
+      package = pkgs.kdePackages.breeze-gtk;
+    };
   };
 
   # =========================================
-  # SHELL CONFIGURATION (ZSH)
+  # TERMINAL EMULATOR (KITTY)
+  # =========================================
+  programs.kitty = {
+    enable = true;
+    themeFile = "Catppuccin-Mocha";
+
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 11.0;
+    };
+
+    settings = {
+      repaint_delay = 10;
+      input_delay = 3;
+      sync_to_monitor = true;
+
+      background_opacity = "0.92";
+      dynamic_background_opacity = true;
+      window_padding_width = 8;
+      confirm_os_window_close = 0;
+      enable_audio_bell = false;
+
+      cursor_shape = "beam";
+      cursor_blink_interval = "0.5";
+
+      tab_bar_style = "powerline";
+      tab_powerline_style = "slanted";
+      active_tab_font_style = "bold";
+
+      scrollback_lines = 10000;
+    };
+  };
   # =========================================
   programs.zsh = {
     enable = true;
@@ -62,11 +92,11 @@
     oh-my-zsh = {
       enable = true;
       theme = "kphoen";
-      plugins = [ "git" "sudo" "z" "history" "docker" ];
+      plugins = [ "git" "sudo" "z" "history" ];
     };
     shellAliases = {
-      rebuild = "nh os switch";
-      upgrade = "nh os switch --update";
+      rebuild = "nh os switch /etc/nixos -H Suisei";
+      upgrade = "nh os switch /etc/nixos -H Suisei --update";
       gcclean = "nh clean all";
       nxsearch = "nh search";
       game = "prime-run";
@@ -133,36 +163,30 @@
   # USER PACKAGES
   # =========================================
   home.packages = with pkgs; [
-    # --- Paquetes Estables (pkgs.stable) ---
-    pkgs.stable.affine
-    pkgs.stable.bottles
-    pkgs.stable.flameshot
-    pkgs.stable.krita
-    pkgs.stable.libreoffice
-    pkgs.stable.onlyoffice-desktopeditors
-    pkgs.stable.openjdk25
-    pkgs.stable.parabolic
-    pkgs.stable.peazip
-    pkgs.stable.proton-vpn
-    pkgs.stable.protontricks
-    pkgs.stable.qbittorrent
-    pkgs.stable.rclone
-    pkgs.stable.sigil
-    pkgs.stable.vesktop
-    pkgs.stable.krename
-
-    # --- Paquetes Inestables (pkgs) ---
-    antigravity-cli
+    affine
+    flameshot
+    krita
+    libreoffice
+    onlyoffice-desktopeditors
+    openjdk25
+    parabolic
+    peazip
+    proton-vpn
+    qbittorrent
+    rclone
+    vesktop
+    krename
+    prismlauncher
     appimage-run
     bazaar
-    brave-origin
+    (brave-origin.override {
+      commandLineArgs = "--password-store=kwallet6";
+    })
     dbeaver-bin
-    gamemode
-    goverlay
+    flutter
     heroic
     hydralauncher
     lutris
-    mangohud
     masterpdfeditor
     nixfmt
     nodejs
@@ -171,16 +195,32 @@
     pdfarranger
     pear-desktop
     telegram-desktop
+    sigil
     upscayl
     vlc
     vscode
+    wl-clipboard
+    xclip
     yazi
 
     # --- Entorno de Programación (Python) ---
     (python3.withPackages (ps: [
       ps.tkinter
       ps.pyside6
+      ps.pyinstaller
+      ps.pdf2docx
     ]))
+
+    # --- Bash ConversorEpubs ---
+    (pkgs.writeShellScriptBin "conversor-epub" ''
+      cd /home/zhi/Documentos/conversor-epub/app_flutter
+      exec ./build/linux/x64/release/bundle/ConversorEpubs
+    '')
+
+    # --- PrintCraft AppImage Wrapper ---
+    (pkgs.writeShellScriptBin "printcraft" ''
+      exec appimage-run /home/zhi/.AppImages/printcraft-0.2.0-linux-x86_64.AppImage "$@"
+    '')
   ];
 
   # =========================================
