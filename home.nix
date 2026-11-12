@@ -52,8 +52,8 @@
       plugins = [ "git" "sudo" "z" "history" ];
     };
     shellAliases = {
-      rebuild = "nh os switch /etc/nixos -H Suisei";
-      upgrade = "nh os switch /etc/nixos -H Suisei --update";
+      rebuild = "nh os switch path:/etc/nixos -H Suisei";
+      upgrade = "nh os switch path:/etc/nixos -H Suisei --update";
       gcclean = "nh clean all";
       nxsearch = "nh search";
       game = "prime-run";
