@@ -9,10 +9,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    antigravity-nix = {
-      url = "github:jacopone/antigravity-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, nixos-hardware, home-manager, twintail-nix, ... } @ inputs: {
@@ -20,11 +16,6 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ({ config, ... }: {
-          nixpkgs.overlays = [
-            inputs.antigravity-nix.overlays.default
-          ];
-        })
 
         twintail-nix.nixosModules.default
         {

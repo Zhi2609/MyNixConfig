@@ -107,8 +107,8 @@
     curl
     distrobox
     fastfetch
-    google-antigravity
-    google-antigravity-cli
+    antigravity-hub
+    antigravity-cli
     git
     glib
     lm_sensors
