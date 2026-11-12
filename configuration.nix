@@ -174,25 +174,25 @@
   # =========================================
   # AUTOMATIZACIÓN & RESPALDOS (RCLONE)
   # =========================================
-  systemd.user.services.rclone-sync = {
-    description = "Sincronización periódica con Rclone";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.writeShellScript "rclone-sync-script" ''
-        ${pkgs.rclone}/bin/rclone sync $HOME/Documentos/Sigil_Epubs gdrive:Mis_Respaldos/Epubs
-        ${pkgs.rclone}/bin/rclone sync $HOME/Imágenes/Fondos gdrive:Mis_Respaldos/Fondos
-      ''}";
-    };
-  };
+  # systemd.user.services.rclone-sync = {
+  #   description = "Sincronización periódica con Rclone";
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "${pkgs.writeShellScript "rclone-sync-script" ''
+  #       ${pkgs.rclone}/bin/rclone sync $HOME/Documentos/Sigil_Epubs gdrive:Mis_Respaldos/Epubs
+  #       ${pkgs.rclone}/bin/rclone sync $HOME/Imágenes/Fondos gdrive:Mis_Respaldos/Fondos
+  #     ''}";
+  #   };
+  # };
 
-  systemd.user.timers.rclone-sync = {
-    description = "Temporizador para sincronizar Rclone";
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "*-*-* *:00/2:00";
-      Persistent = true;
-    };
-  };
+  # systemd.user.timers.rclone-sync = {
+  #   description = "Temporizador para sincronizar Rclone";
+  #   wantedBy = [ "timers.target" ];
+  #   timerConfig = {
+  #     OnCalendar = "*-*-* *:00/2:00";
+  #     Persistent = true;
+  #   };
+  # };
 
   system.stateVersion = "26.05";
 }
