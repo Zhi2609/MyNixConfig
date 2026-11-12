@@ -179,7 +179,7 @@
     prismlauncher
     appimage-run
     bazaar
-    (brave-origin.override {
+    (brave.override {
       commandLineArgs = "--password-store=kwallet6";
     })
     dbeaver-bin
@@ -198,9 +198,8 @@
     sigil
     upscayl
     vlc
-    vscode
+    codium
     wl-clipboard
-    xclip
     yazi
 
     # --- Entorno de Programación (Python) ---
@@ -211,16 +210,6 @@
       ps.pdf2docx
     ]))
 
-    # --- Bash ConversorEpubs ---
-    (pkgs.writeShellScriptBin "conversor-epub" ''
-      cd /home/zhi/Documentos/conversor-epub/app_flutter
-      exec ./build/linux/x64/release/bundle/ConversorEpubs
-    '')
-
-    # --- PrintCraft AppImage Wrapper ---
-    (pkgs.writeShellScriptBin "printcraft" ''
-      exec appimage-run /home/zhi/.AppImages/printcraft-0.2.0-linux-x86_64.AppImage "$@"
-    '')
   ];
 
   # =========================================
