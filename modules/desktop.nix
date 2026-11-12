@@ -20,6 +20,8 @@
     khelpcenter
   ];
 
+  programs.kde-pim.enable = false;
+
   # Excluir terminales por defecto de XServer
   services.xserver.excludePackages = [
     pkgs.xterm
@@ -53,7 +55,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
   };
 
   # Fuentes del sistema

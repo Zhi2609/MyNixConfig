@@ -28,16 +28,6 @@
         name = "KWrite";
         noDisplay = true;
       };
-      printcraft = {
-        name = "PrintCraft";
-        genericName = "PDF Editor";
-        comment = "Read, organize, combine, split and secure PDFs";
-        exec = "printcraft %F";
-        icon = "ai.storyteller.printcraft";
-        terminal = false;
-        categories = [ "Office" "Viewer" "Graphics" ];
-        mimeType = [ "application/pdf" ];
-      };
     };
   };
 
@@ -50,39 +40,6 @@
     };
   };
 
-  # =========================================
-  # TERMINAL EMULATOR (KITTY)
-  # =========================================
-  programs.kitty = {
-    enable = true;
-    themeFile = "Catppuccin-Mocha";
-
-    font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 11.0;
-    };
-
-    settings = {
-      repaint_delay = 10;
-      input_delay = 3;
-      sync_to_monitor = true;
-
-      background_opacity = "0.92";
-      dynamic_background_opacity = true;
-      window_padding_width = 8;
-      confirm_os_window_close = 0;
-      enable_audio_bell = false;
-
-      cursor_shape = "beam";
-      cursor_blink_interval = "0.5";
-
-      tab_bar_style = "powerline";
-      tab_powerline_style = "slanted";
-      active_tab_font_style = "bold";
-
-      scrollback_lines = 10000;
-    };
-  };
   # =========================================
   programs.zsh = {
     enable = true;
@@ -170,7 +127,6 @@
     onlyoffice-desktopeditors
     openjdk25
     parabolic
-    peazip
     proton-vpn
     qbittorrent
     rclone
@@ -198,9 +154,15 @@
     sigil
     upscayl
     vlc
-    codium
+    vscodium
     wl-clipboard
     yazi
+    floorp-bin
+    fd
+    eza
+    tldr
+    lazygit
+    bat
 
     # --- Entorno de Programación (Python) ---
     (python3.withPackages (ps: [

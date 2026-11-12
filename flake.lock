@@ -1,0 +1,129 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794278858,
+        "narHash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1794425805,
+        "narHash": "sha256-4s5CRvkYX4oAJVZ+zu2bBKFH2gG2GqN6OKHEWgJr1AY=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "b6ca87f78ec5bafc4b2aef7b29803dcf419266af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1789546076,
+        "narHash": "sha256-vWkSk5bbfTqdtMoSgD9FshACO8JCvXTFi+3cqEp0mH0=",
+        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074753.b1b875982b17/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1794192123,
+        "narHash": "sha256-SvB8u5qaJAOwZZyZciqTVOg/rBoUs2w0sFTU6ED51AQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "177d0540942fb205af6993b1d5fa0b57799e09f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1794042290,
+        "narHash": "sha256-ziZn2PvCJE5JEEpqTdxXwJpPB+L3YqoCpTAMCzyaP3U=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
+        "nixpkgs": "nixpkgs_2",
+        "twintail-nix": "twintail-nix"
+      }
+    },
+    "twintail-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3",
+        "twintail_x86_64": "twintail_x86_64"
+      },
+      "locked": {
+        "lastModified": 1794223075,
+        "narHash": "sha256-wBHhQID78H5aniOXPCECFns1ytRHD5+z6iWZI5qoy3Y=",
+        "owner": "madebycli",
+        "repo": "twintail-nix",
+        "rev": "36602fe1e8d2eb1c0b840413baf03af01728c07d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "madebycli",
+        "repo": "twintail-nix",
+        "type": "github"
+      }
+    },
+    "twintail_x86_64": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-gBhzKoqZUmIu75UxUA5qivMc5fIN9D8PyeY5+9OrOu8=",
+        "type": "file",
+        "url": "https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.5.2/twintaillauncher_2.5.2_amd64.deb"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.5.2/twintaillauncher_2.5.2_amd64.deb"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

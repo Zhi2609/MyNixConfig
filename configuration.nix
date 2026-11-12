@@ -96,6 +96,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.ssh.startAgent = true;
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     PROTON_ENABLE_NVAPI = "1";
