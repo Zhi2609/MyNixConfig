@@ -105,32 +105,32 @@
   };
 
   environment.systemPackages = with pkgs; [
+    antigravity-cli
+    antigravity-hub
+    binutils
     btop
     curl
     distrobox
     fastfetch
-    antigravity-hub
-    antigravity-cli
     git
     glib
     lm_sensors
+    ncdu
     nvtopPackages.full
     p7zip
     pciutils
-    binutils
     powertop
-    ncdu
     rsync
     tree
-    unzip
     unrar
+    unzip
     usbutils
     wget
     xdg-user-dirs
     xdg-utils
+    zenity
     zip
     zstd
-    zenity
   ];
 
   # =========================================
@@ -151,7 +151,6 @@
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCUSin4="
       ];
-      auto-optimise-store = true;
       trusted-users = [ "root" "@wheel" ];
     };
     optimise.automatic = true;
@@ -161,7 +160,7 @@
   # BASE DE DATOS Y CONTENEDORES
   # =========================================
   services.mysql = {
-    enable = true;
+    enable = false;
     package = pkgs.mariadb;
     dataDir = "/var/lib/mysql";
     settings.mysqld.port = 3306;

@@ -116,60 +116,66 @@
     };
   };
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+  };
+
   # =========================================
   # USER PACKAGES
   # =========================================
   home.packages = with pkgs; [
     affine
-    flameshot
-    krita
-    libreoffice
-    onlyoffice-desktopeditors
-    openjdk25
-    parabolic
-    proton-vpn
-    qbittorrent
-    rclone
-    vesktop
-    krename
-    prismlauncher
     appimage-run
+    bat
     bazaar
     (brave.override {
       commandLineArgs = "--password-store=kwallet6";
     })
     dbeaver-bin
+    eza
+    fd
+    flameshot
+    floorp-bin
     flutter
     heroic
     hydralauncher
+    krename
+    krita
+    lazygit
+    libreoffice
     lutris
     masterpdfeditor
     nixfmt
     nodejs
+    onlyoffice-desktopeditors
     opencode
+    openjdk25
     pandoc
+    parabolic
     pdfarranger
     pear-desktop
-    telegram-desktop
+    prismlauncher
+    proton-vpn
+    protonplus
+    qbittorrent
+    rclone
     sigil
+    telegram-desktop
+    tldr
     upscayl
+    vesktop
     vlc
-    vscodium
+    vscode
     wl-clipboard
     yazi
-    floorp-bin
-    fd
-    eza
-    tldr
-    lazygit
-    bat
 
     # --- Entorno de Programación (Python) ---
     (python3.withPackages (ps: [
-      ps.tkinter
-      ps.pyside6
-      ps.pyinstaller
       ps.pdf2docx
+      ps.pyinstaller
+      ps.pyside6
+      ps.tkinter
     ]))
 
   ];
