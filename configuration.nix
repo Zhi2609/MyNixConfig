@@ -15,10 +15,20 @@
   # BOOT & KERNEL
   # =========================================
   boot = {
+    plymouth = {
+      enable = true;
+      theme = "nixos-bgrt";
+      themePackages = [ pkgs.nixos-bgrt-plymouth ];
+    };
+    consoleLogLevel = 3;
     kernelParams = [
       "intel_iommu=on"
       "iommu=pt"
       "preempt=full"
+      "quiet"
+      "splash"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
     ];
     kernel.sysctl = {
       "vm.swappiness" = 10;
