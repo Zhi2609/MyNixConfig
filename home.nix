@@ -125,6 +125,7 @@
   # USER PACKAGES
   # =========================================
   home.packages = with pkgs; [
+    android-studio
     affine
     appimage-run
     bat
@@ -133,6 +134,7 @@
       commandLineArgs = "--password-store=kwallet6";
     })
     dbeaver-bin
+    eas-cli
     eza
     fd
     flameshot
