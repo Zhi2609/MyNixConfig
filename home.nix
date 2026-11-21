@@ -178,6 +178,9 @@
       ps.pyinstaller
       ps.pyside6
       ps.tkinter
+      ps.numpy
+      ps.matplotlib
+      ps.scipy
     ]))
 
   ];

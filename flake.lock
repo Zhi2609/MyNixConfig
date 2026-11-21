@@ -54,11 +54,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1794890597,
-        "narHash": "sha256-lME2lHoDHAaSHP3/okgiVoJ0icVEvsQH8LeU3We7tcc=",
+        "lastModified": 1795085501,
+        "narHash": "sha256-S5keGWzaKpuXo9MNoIC2FfTIuTyTnx8P4NhYJMEsTLI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "04906337b6d53e8bb0eaf0470ae9f070a4d4eb55",
+        "rev": "0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
         "type": "github"
       },
       "original": {
@@ -70,11 +70,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1794890597,
-        "narHash": "sha256-lME2lHoDHAaSHP3/okgiVoJ0icVEvsQH8LeU3We7tcc=",
+        "lastModified": 1795085501,
+        "narHash": "sha256-S5keGWzaKpuXo9MNoIC2FfTIuTyTnx8P4NhYJMEsTLI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "04906337b6d53e8bb0eaf0470ae9f070a4d4eb55",
+        "rev": "0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
         "type": "github"
       },
       "original": {
@@ -98,11 +98,11 @@
         "twintail_x86_64": "twintail_x86_64"
       },
       "locked": {
-        "lastModified": 1795001323,
-        "narHash": "sha256-6HUgbFDWQjugwwsoKAsrY7v4JMEC9xhcWsiN+jBLSlw=",
+        "lastModified": 1795173428,
+        "narHash": "sha256-JSQs6CoU6opCJGyezAMBDrFPX9mIs7xLJF7Fh6NVpmk=",
         "owner": "madebycli",
         "repo": "twintail-nix",
-        "rev": "87a92f1a02bcd4aefc9e9f3f00c5a6bb77e91943",
+        "rev": "09c98f5da2389ca95322def74c03653c8665649d",
         "type": "github"
       },
       "original": {
