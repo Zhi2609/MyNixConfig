@@ -61,6 +61,7 @@
   fonts.packages = with pkgs; [
     corefonts
     google-fonts
+    ibm-plex
     nerd-fonts.caskaydia-cove
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
