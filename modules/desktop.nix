@@ -62,6 +62,7 @@
     corefonts
     google-fonts
     ibm-plex
+    inter
     nerd-fonts.caskaydia-cove
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
