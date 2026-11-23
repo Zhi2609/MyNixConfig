@@ -138,6 +138,7 @@
     flameshot
     floorp-bin
     flutter
+    gearlever
     heroic
     hydralauncher
     krename
