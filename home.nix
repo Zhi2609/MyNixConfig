@@ -71,6 +71,19 @@
       SAVEHIST=50000
       setopt HIST_IGNORE_ALL_DUPS
       setopt SHARE_HISTORY
+
+      function pet-select() {
+        local selected
+        selected=$(pet search --query "$LBUFFER")
+        if [[ -n "$selected" ]]; then
+          BUFFER="$selected"
+          CURSOR=$#BUFFER
+        fi
+        zle redisplay
+      }
+      zle -N pet-select
+      bindkey '^[p' pet-select
+
       fastfetch
     '';
   };
@@ -138,6 +151,7 @@
     flameshot
     floorp-bin
     flutter
+    fzf
     gearlever
     heroic
     hydralauncher
@@ -156,6 +170,7 @@
     parabolic
     pdfarranger
     pear-desktop
+    pet
     prismlauncher
     proton-vpn
     protonplus

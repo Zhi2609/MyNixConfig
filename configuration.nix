@@ -189,6 +189,8 @@
     description = "Sincronización periódica con Rclone";
     serviceConfig = {
       Type = "oneshot";
+      Nice = 19;
+      IOSchedulingClass = "idle";
       ExecStart = "${pkgs.writeShellScript "rclone-sync-script" ''
         ${pkgs.rclone}/bin/rclone sync "$HOME/Documentos/Sigil Epubs" gdrive:Mis_Respaldos/Epubs
         ${pkgs.rclone}/bin/rclone sync "$HOME/Documentos/Universidad" gdrive:Mis_Respaldos/Universidad

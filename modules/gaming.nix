@@ -28,6 +28,6 @@
   # Planificador sched_ext optimizado para gaming y baja latencia
   services.scx-loader = {
     enable = true;
-    config.default_sched = "scx_lavd";
+    config.default_sched = "scx_bpfland";
   };
 }

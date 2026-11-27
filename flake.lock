@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795534022,
-        "narHash": "sha256-xkRZ+PcPWaAyf9YrEBszYD5w2S6/Ac2tIfsufzd4dEQ=",
+        "lastModified": 1795748630,
+        "narHash": "sha256-J1iQ1QMnkFwZFXnlPt2t3Qx7TsGjw08/0L3QMqNt+Wg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b56bcd042b5e69ad188eca20d9bec1bfbf3dd453",
+        "rev": "54f903fdaaf5d5720ed36706fe75332af69eb793",
         "type": "github"
       },
       "original": {
@@ -25,11 +25,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1795549782,
-        "narHash": "sha256-0mlYwyAv7lUDD6HBgPMqBXjMcIfIZBsLryNnkspeIGs=",
+        "lastModified": 1795690694,
+        "narHash": "sha256-9QjYnidlKg7EtcPkr07D3epP7I1WuVBfA5nk47+I5dc=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "97a30ee0974b815496bec7b136af6b945bd65aef",
+        "rev": "ec39df522f291a1da3bee80d3ff67d99c57a17b0",
         "type": "github"
       },
       "original": {
@@ -98,11 +98,11 @@
         "twintail_x86_64": "twintail_x86_64"
       },
       "locked": {
-        "lastModified": 1795345332,
-        "narHash": "sha256-sQS3cSIhy9iou2iCrZJkAD6/0/S5Vqx0tMaab8mm3cU=",
+        "lastModified": 1795600524,
+        "narHash": "sha256-Mnm2Nhawt1jsUfpSpfDn1gbEYxkV78clUfVSVCWstac=",
         "owner": "madebycli",
         "repo": "twintail-nix",
-        "rev": "68e6ad81c9074cd3b476e2674c41fbe96e0c9514",
+        "rev": "81d3c144bb673afecb9c08c906808137ee06d9d0",
         "type": "github"
       },
       "original": {
@@ -114,13 +114,13 @@
     "twintail_x86_64": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-0AKWCodEYkp5st1YHveA8AsdWBUx4pT93x5Ru3QPahA=",
+        "narHash": "sha256-LRw9oAMRyfHxmJNwouhWldc9Jh0OdSFUW6J6IXuOPLs=",
         "type": "file",
-        "url": "https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.5.3/twintaillauncher_2.5.3_amd64.deb"
+        "url": "https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.5.4/twintaillauncher_2.5.4_amd64.deb"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.5.3/twintaillauncher_2.5.3_amd64.deb"
+        "url": "https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.5.4/twintaillauncher_2.5.4_amd64.deb"
       }
     }
   },
