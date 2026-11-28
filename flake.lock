@@ -39,6 +39,26 @@
         "type": "github"
       }
     },
+    "nixos-update-notifier": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1795675373,
+        "narHash": "sha256-Fyi8rSGSGNuWumPUQiglHD48sp84YCYrzaLBjkOH3Hs=",
+        "owner": "stuckj",
+        "repo": "nixos-update-notifier",
+        "rev": "8a9782db78edc0b1490a3ce7dace1110850b0aa1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stuckj",
+        "repo": "nixos-update-notifier",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1789546076,
@@ -88,6 +108,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
+        "nixos-update-notifier": "nixos-update-notifier",
         "nixpkgs": "nixpkgs_2",
         "twintail-nix": "twintail-nix"
       }

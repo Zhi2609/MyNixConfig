@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.nixos-update-notifier.homeManagerModules.default
+  ];
+
   # =========================================
   # USER ENVIRONMENT & IDENTITY
   # =========================================
@@ -132,6 +136,15 @@
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;
+  };
+
+  # =========================================
+  # UPDATE NOTIFIER
+  # =========================================
+  services.nixos-update-notifier = {
+    enable = true;
+    flakePath = "/etc/nixos";
+    hostAttr = "Suisei";
   };
 
   # =========================================
